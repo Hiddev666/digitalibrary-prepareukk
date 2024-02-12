@@ -2,7 +2,7 @@
     <div class="container card p-4">
 
         <h3>Tambah Buku</h3>
-        <form method="POST" action="pages/control/storeBuku.php">
+        <form method="POST" action="pages/control/storeBuku.php" enctype="multipart/form-data">
             <div class="row">
                 <div class="col">
                     <label for="judul" class="form-label">Judul</label>
@@ -30,11 +30,13 @@
                         <?php
                         $query = mysqli_query($conn, "SELECT * FROM kategoribuku;");
                         foreach ($query as $kategori) { ?>
-                            <option value="<?= $kategori['id']?>"><?= $kategori['nama_kategori']?></option>
+                            <option value="<?= $kategori['id'] ?>"><?= $kategori['nama_kategori'] ?></option>
                         <?php } ?>
                     </select>
                 </div>
                 <div class="col">
+                    <label for="image" class="form-label">Cover</label>
+                    <input type="file" class="form-control" id="image" name="image">
                 </div>
             </div>
             <div class="mt-3">

@@ -74,6 +74,15 @@ if (!isset($_SESSION["level"])) {
             <?php } else { ?>
                 <?php include "pages/buku.php" ?>
             <?php } ?>
+
+            <?php
+                if(isset($_GET['auth'])) {
+                    if($_GET['auth'] == "logout") {
+                        include "../logout.php";
+                    }
+                }
+
+            ?>
         </div>
     </div>
 

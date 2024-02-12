@@ -12,10 +12,11 @@ if (isset($_POST["username"])) {
         $queryArr = mysqli_fetch_array($query);
         if (mysqli_num_rows($query) != 0) {
             $_SESSION['username'] = $queryArr['username'];
+            $_SESSION['user-id'] = $queryArr['id'];
 
             if ($queryArr['level'] == "3") {
                 $_SESSION['level'] = $queryArr['level'];
-                header("Location: peminjam/");
+                header("Location: peminjam/?page=allcatalog");
             }
 
             if ($queryArr["level"] == "2") {
