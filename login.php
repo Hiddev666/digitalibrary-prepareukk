@@ -1,4 +1,12 @@
-<?php include "config/database-conf.php"; ?>
+<?php
+
+session_start();
+
+if (isset($_SESSION["level"])) {
+    header("Location: index.php?message=info_login");
+}
+include "config/database-conf.php";
+?>
 
 <!doctype html>
 <html lang="en">

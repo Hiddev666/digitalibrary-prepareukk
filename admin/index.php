@@ -1,9 +1,11 @@
 <?php
+
 session_start();
 
 if (!isset($_SESSION["level"])) {
     header("Location: index.php?message=info_login");
 }
+
 ?>
 <?php include "../config/database.php"; ?>
 

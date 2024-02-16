@@ -38,8 +38,14 @@ $getDetailBook = mysqli_fetch_array(mysqli_query($conn, "SELECT buku.id, buku.im
             <h6>Tambahkan Rating</h6>
             <form action="pages/storeRating.php" method="POST">
                 <input type="hidden" name="id" id="" value="<?= $_GET['id'] ?>">
-                <input type="number" class="form-control" name="rating">
-        </div>
+                <select name="rating" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
         <div class="mt-2">
             <h6>Tambahkan Ulasan</h6>
             <textarea name="ulasan" id="" cols="30" rows="10" class="form-control">

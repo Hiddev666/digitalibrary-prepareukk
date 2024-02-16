@@ -1,8 +1,11 @@
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$db = "digitalibrary";
+
+$env = parse_ini_file("../.env");
+
+$server = $env['DB_SERVER'];
+$username = $env['DB_USERNAME'];
+$password = $env['DB_PASSWORD'];
+$db = $env['DB_NAME'];
 
 try {
     $conn = mysqli_connect($server, $username, $password, $db);
@@ -10,4 +13,3 @@ try {
     echo "Database Connection Error!";
     die();
 }
-?>
